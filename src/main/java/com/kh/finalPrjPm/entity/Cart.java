@@ -15,6 +15,8 @@ public class Cart {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
+    private String cartName;
+
     @OneToOne // 회원엔티티와 일대일 매칭
     @JoinColumn(name="member_id")
     private Member member;
