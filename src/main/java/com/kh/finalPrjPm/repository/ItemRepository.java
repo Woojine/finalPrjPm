@@ -2,6 +2,8 @@ package com.kh.finalPrjPm.repository;
 
 import com.kh.finalPrjPm.entity.Item;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -21,4 +23,8 @@ public interface ItemRepository extends JpaRepository<Item, Long> {
     List<Item> findByPriceBetween(Integer min, Integer max);
     // 부분 문자열 검색
     List<Item> findByItemNmContaining(String keyword);
+    // JPQL 쿼리 작성 하기
+    @Query(value = "select * from item where item_detail like %:itemDetail% order by price desc",
+    nativeQuery = true)
+    List<Item> findByItemDetailByNative(@Param("itemDetail") String itemDetail);
 }

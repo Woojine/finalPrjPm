@@ -95,4 +95,13 @@ class ItemRepositoryTest {
             System.out.println("결과 : " + e.toString());
         }
     }
+    @Test
+    @DisplayName("@Query를 이용한 상품 조회 테스트")
+    public void findByItemDetailTest() {
+        this.createItemTest();
+        List<Item> itemList = itemRepository.findByItemDetailByNative("상세 설명6");
+        for(Item e : itemList) {
+            System.out.println("결과 : " + e.toString());
+        }
+    }
 }
