@@ -19,7 +19,7 @@ public class Member {
     private Long id;
     private String userID;
     private String name;
-    private String password;
+    private String password; 
     @Column(unique = true)
     private String email;
     @Column(name = "join_time")
