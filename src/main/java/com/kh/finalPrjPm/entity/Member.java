@@ -15,23 +15,21 @@ public class Member {
     @Column(name = "member_id")
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private String userID;
+    private String userId;
     private String name;
     private String password; 
     @Column(unique = true)
     private String email;
-    @Column(name = "join_time")
-    private LocalDateTime joinTime;
 
     @Enumerated(EnumType.STRING)
     private Authority authority;
 
     @Builder
-    public Member(String user, String email, String password, String name, Authority auth) {
-        this.userID = user;
+    public Member(String user, String email, String password, String name, Authority authority) {
+        this.userId = user;
         this.email = email;
         this.password = password;
         this.name = name;
-        this.authority = auth;
+        this.authority = authority;
     }
 }
