@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Controller
-@RequestMapping("/thymeleaf")
+@RequestMapping("/thymeleaf1")
 public class ThymeleafController {
     @GetMapping("/item")
     public String thymeleafItem(Model model) {
