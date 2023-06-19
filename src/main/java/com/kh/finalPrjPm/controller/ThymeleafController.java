@@ -22,7 +22,7 @@ public class ThymeleafController {
         itemDto.setPrice(100000);
         itemDto.setRegTime(LocalDateTime.now());
         model.addAttribute("itemDto", itemDto);
-        return "thymeleafEx/thymeleafItem";
+        return "thymeleaf/thymeleafItem";
     }
     @GetMapping("/item-list")
     public String thymeleafItemList(Model model) {
@@ -36,16 +36,16 @@ public class ThymeleafController {
             itemDtoList.add(itemDto);
         }
         model.addAttribute("itemDtoList", itemDtoList);
-        return "thymeleafEx/thymeleafItemList";
+        return "thymeleaf/thymeleafItemList";
     }
     @GetMapping("/link-move")
     public String thymeleafLinkMove() {
-        return "thymeleafEx/thymeleafLinkMove";
+        return "thymeleaf/thymeleafLinkMove";
     }
     @GetMapping("/link-value")
     public String thymeleafLinkValue(String param1, String param2, Model model) {
         model.addAttribute("param1", param1);
         model.addAttribute("param2", param2);
-        return "thymeleafEx/thymeleafLinkParam";
+        return "thymeleaf/thymeleafLinkParam";
     }
 }
