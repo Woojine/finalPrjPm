@@ -48,4 +48,8 @@ public class ThymeleafController {
         model.addAttribute("param2", param2);
         return "thymeleaf/thymeleafLinkParam";
     }
+    @GetMapping("/layout")
+    public String thymeleafLayoutEx() {
+        return "thymeleaf/layout-test";
+    }
 }
